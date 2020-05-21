@@ -72,6 +72,7 @@
 
 ;;;; Footer
 
+;;;###autoload
 (define-derived-mode ron-mode prog-mode "ron-mode"
   "Major mode for editing RON files"
   (setq font-lock-defaults '((ron-font-lock-keywords)))
@@ -80,6 +81,9 @@
   (setq tab-width ron-mode-indent-offset)
   (setq indent-line-function 'ron-indent-line)  
   (setq indent-tabs-mode nil))
+
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.ron" . ron-mode))
 
 (provide 'ron-mode)
 
